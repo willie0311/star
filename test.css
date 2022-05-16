@@ -1,0 +1,337 @@
+html,body{
+    /* 高度一樣要設定 背景圖片要有高 */
+    height: 100%;
+    overflow: hidden;
+}
+
+#universe{
+    background: radial-gradient(#555,#000);
+}
+/* 星星 */
+@keyframes starFlash {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0.3;
+    }
+}
+
+#stars{
+    height: 100%;
+    background-image: url(./images/stars.png);
+    background-size: cover;
+    /* 1:動畫名稱  2:秒數 3:4:來回無線撥放 */
+    animation: starFlash 2s infinite alternate;
+}
+
+
+/* 設定太陽動畫名稱 */
+@keyframes sunLight {
+    from {
+        box-shadow: 0 0 45px #f5c91a;
+    }
+    to {
+        box-shadow: 0 0 120px #f5c91a;
+    }
+}
+
+/* 需要body加上 div "id=sun" */
+#sun{
+    /* 正方形大小 設定顏色 */
+    width: 100px;
+    height: 100px;
+    background-image: url(./images/n0.png);
+    background-repeat: no-repeat;
+    /* 把div區塊位置 固定在中間 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* 對準點在左上角 需要減掉一半 才會顯示在中間 */
+    margin-top: -50px;
+    margin-left: -50px;
+    /* 把正方形設定為圓形 加上陰影效果 */
+    border-radius: 50%;
+    box-shadow: 0 0 45px #f5c91a;
+    /* 讓太陽光線動畫 */
+    animation:  sunLight 3s infinite alternate;
+
+}
+/* 軌道跟地球自轉 */
+@keyframes spin {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+/* 軌道 */
+#earthOrbit{
+    /* 軌道border */
+    width: 500px;
+    height: 500px;
+    /* border: 0.5px solid red; */
+    /* 位置 */
+    border-radius: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* 500px/2=250px */
+    margin-top: -450px;
+    margin-left: -450px;
+
+    animation: spin 20s linear infinite;
+}
+/* 地球 */
+#earth{
+    /* 定位減圖的一半80px/2=40px */
+    position: absolute;
+    margin-top: -40px;
+    margin-left: -40px;
+    top: 50%;
+    animation: spin 20s linear infinite;
+}
+
+/* 第二個軌道 */
+#moonOrbit{
+    /* 軌道border */
+    width: 120px;
+    height: 120px;
+    /* border: 0.5px solid red; */
+    /* 位置 */
+    border-radius: 100%;
+    position: absolute;
+    top: 50%;
+    
+    /* 120px/2=60px */
+    margin-top: -60px;
+    margin-left: -60px;
+
+    animation: spin 20s linear infinite;
+}
+
+/* 月球 */
+#moon{
+    width: 30px;
+    height: 30px;
+    background:  radial-gradient(#ddd,#888);
+    border-radius: 100%;
+}
+
+
+
+/* 新增 */
+/* 軌道跟地球自轉 */
+@keyframes spin {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+/* 軌道 */
+/* n1水星 */
+#n1-1{
+    /* 軌道border */
+    width: 200px;
+    height: 200px;
+    /* border: 0.5px solid red; */
+    /* 位置 */
+    border-radius: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    margin-top: -100px;
+    margin-left: -100px;
+
+    animation: spin 20s linear infinite;
+}
+#n1{
+    /* 定位減圖的一半 */
+    position: absolute;
+    margin-top: -20px;
+    margin-left: -20px;
+    top: 50%;
+    animation: spin 20s linear infinite;
+}
+/* n2金星 */
+#n2-1{
+    /* 軌道border */
+    width: 300px;
+    height: 300px;
+    /* border: 0.5px solid red; */
+    /* 位置 */
+    border-radius: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* 500px/2=250px */
+    margin-top: -150px;
+    margin-left: -150px;
+
+    animation: spin 25s linear infinite;
+}
+#n2{
+    /* 定位減圖的一半 */
+    position: absolute;
+    margin-top: -18px;
+    margin-left: -18px;
+    top: 50%;
+    animation: spin 20s linear infinite;
+}
+/* n3地球&月球 */
+#n3-1{
+    /* 軌道border */
+    width: 500px;
+    height: 500px;
+    /* border: 0.5px solid red; */
+    /* 位置 */
+    border-radius: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* 500px/2=250px */
+    margin-top: -250px;
+    margin-left: -250px;
+
+    animation: spin 30s linear infinite;
+}
+#n3{
+    /* 定位減圖的一半80px/2=40px */
+    position: absolute;
+    margin-top: -40px;
+    margin-left: -40px;
+    top: 50%;
+    animation: spin 15s linear infinite;
+}
+/* n4火星 */
+#n4-1{
+    /* 軌道border */
+    width: 760px;
+    height: 760px;
+    /* border: 0.5px solid red; */
+    /* 位置 */
+    border-radius: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* 500px/2=250px */
+    margin-top: -380px;
+    margin-left: -380px;
+
+    animation: spin 26s linear infinite;
+}
+
+#n4{
+    /* 定位減圖的一半80px/2=40px */
+    position: absolute;
+    margin-top: -32px;
+    margin-left: -32px;
+    top: 50%;
+    animation: spin 18s linear infinite;
+}
+/* 5 */
+#n5-1{
+    /* 軌道border */
+    width: 900px;
+    height: 900px;
+    /* border: 0.5px solid red; */
+    /* 位置 */
+    border-radius: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* 500px/2=250px */
+    margin-top: -450px;
+    margin-left: -450px;
+
+    animation: spin 28s linear infinite;
+}
+
+#n5{
+    /* 定位減圖的一半80px/2=40px */
+    position: absolute;
+    margin-top: -20px;
+    margin-left: -20px;
+    top: 50%;
+    animation: spin 20s linear infinite;
+}
+/* 5 */
+#n6-1{
+    /* 軌道border */
+    width: 1000px;
+    height: 1000px;
+    /* border: 0.5px solid red; */
+    /* 位置 */
+    border-radius: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* 500px/2=250px */
+    margin-top: -500px;
+    margin-left: -500px;
+
+    animation: spin 25s linear infinite;
+}
+
+#n6{
+    /* 定位減圖的一半80px/2=40px */
+    position: absolute;
+    margin-top: -20px;
+    margin-left: -20px;
+    top: 50%;
+    animation: spin 20s linear infinite;
+}
+#n7-1{
+    /* 軌道border */
+    width: 1100px;
+    height: 1100px;
+    /* border: 0.5px solid red; */
+    /* 位置 */
+    border-radius: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* 500px/2=250px */
+    margin-top: -550px;
+    margin-left: -550px;
+
+    animation: spin 32s linear infinite;
+}
+
+#n7{
+    /* 定位減圖的一半 */
+    position: absolute;
+    margin-top: -20px;
+    margin-left: -20px;
+    top: 50%;
+    animation: spin 32s linear infinite;
+}
+#n8-1{
+    /* 軌道border */
+    width: 1200px;
+    height: 1200px;
+    /* border: 0.5px solid red; */
+    /* 位置 */
+    border-radius: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -600px;
+    margin-left: -600px;
+
+    animation: spin 60s linear infinite;
+}
+#n8{
+    /* 定位減圖的一半 */
+    position: absolute;
+    margin-top: -20px;
+    margin-left: -20px;
+    top: 50%;
+    animation: spin 10s linear infinite;
+}
